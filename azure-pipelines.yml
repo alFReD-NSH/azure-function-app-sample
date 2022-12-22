@@ -1,0 +1,15 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+steps:
+  - task: AzureCLI@2
+    inputs:
+      azureSubscription: 'Azure subscription 1(bdcfcf87-8bbc-4066-b692-524731586fec)'
+      scriptType: 'bash'
+      scriptLocation: 'inlineScript'
+      inlineScript: 'terraform init; terraform apply'
